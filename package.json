@@ -2,10 +2,23 @@
   "name": "validejsontest",
   "version": "1.0.0",
   "description": "test for ganister",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js"
   },
-  "author": "Jordan Boyer",
-  "license": "ISC"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jordan-boyer/ValideJson.git"
+  },
+  "author": "jordan boyer",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jordan-boyer/ValideJson/issues"
+  },
+  "homepage": "https://github.com/jordan-boyer/ValideJson#readme",
+  "dependencies": {
+    "ajv": "^5.1.4",
+    "express": "^4.15.3"
+  }
 }

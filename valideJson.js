@@ -1,9 +1,9 @@
-var Ajv = require("ajv");
+const Ajv = require("ajv");
 var ajv = new Ajv({
   meta: false, // optional, to prevent adding draft-06 meta-schema
   extendRefs: true, // optional, current default is to 'fail', spec behaviour is to 'ignore'
   unknownFormats: 'ignore',  // optional, current default is true (fail)
-  // ...
+  allErrors: true
 });
 
 var metaSchema = require('ajv/lib/refs/json-schema-draft-04.json');
@@ -21,5 +21,13 @@ ajv.removeKeyword('const');
 var schema = require('./datamodelSchema.json');
 var data = require('./datamodel.json');
 
-var valid = ajv.validate(schema, data);
-if (!valid) console.log(ajv.errors);
+module.exports = {
+	valideJson: function() {
+		var valid = ajv.validate(schema, data);
+		if (!valid)
+			return (ajv.errors);
+		else 
+			return "datamodel valide";
+
+	}
+};
